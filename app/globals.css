@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* Colours: Kandy lake teal with a saffron highlight. */
+:root {
+  --paper: #f3f6f5;
+  --surface: #ffffff;
+  --ink: #132420;
+  --muted: #53645e;
+  --line: #d6dfdb;
+  --accent: #0b6b66;
+  --accent-soft: #dcefeb;
+  --saffron: #d9932b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0e1614;
+    --surface: #15201d;
+    --ink: #e6efeb;
+    --muted: #9fb2ab;
+    --line: #283733;
+    --accent: #5fc6bb;
+    --accent-soft: #17302c;
+    --saffron: #f0b65a;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-saffron: var(--saffron);
+  --font-sans: "Instrument Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
